@@ -1,5 +1,6 @@
 node_modules/
 web-ext-artifacts/
+dist/
 .qa/
 .env
 .env.*

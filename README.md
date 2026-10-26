@@ -102,6 +102,8 @@ npx --yes web-ext@latest build --overwrite-dest
   extension.
 - The extension contains no analytics or advertising.
 
+Read the full [Privacy Policy](PRIVACY.md).
+
 ## Important notes
 
 Genius does not provide line timestamps. Timed lyrics come from Musixmatch,

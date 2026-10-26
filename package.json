@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build:auto-sync": "node scripts/build-auto-sync.mjs",
+    "build:chrome": "node scripts/build-chrome.mjs",
     "test": "node --test search-utils.test.mjs lrc-utils.test.mjs alignment-utils.test.mjs background.test.mjs"
   },
   "devDependencies": {
