@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Автосинхронизация — Lyrics for SoundCloud</title>
+    <link rel="stylesheet" href="auto-sync.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">LYRICS FOR SOUNDCLOUD</span>
+          <h1>Автосинхронизация</h1>
+        </div>
+        <span class="local-badge">Локально · без API</span>
+      </header>
+
+      <section class="track-bar" aria-label="Текущий трек">
+        <span class="track-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div>
+          <strong id="track-title">Трек не выбран</strong>
+          <span id="track-artist">Откройте редактор из SoundCloud</span>
+        </div>
+        <a id="soundcloud-link" href="https://soundcloud.com" target="_blank" rel="noreferrer">SoundCloud ↗</a>
+      </section>
+
+      <section class="setup-grid">
+        <div class="setup-column">
+          <span class="step-label">01 · АУДИО</span>
+          <label class="file-drop" for="audio-file">
+            <strong>Выберите файл песни</strong>
+            <span id="file-name">MP3, WAV, M4A, FLAC, OGG или WebM</span>
+            <input id="audio-file" type="file" accept="audio/*,.mp3,.wav,.m4a,.flac,.ogg,.webm">
+          </label>
+          <label class="field-label" for="language">Язык вокала</label>
+          <select id="language">
+            <option value="">Определить автоматически</option>
+            <option value="russian">Русский</option>
+            <option value="english">Английский</option>
+            <option value="ukrainian">Украинский</option>
+            <option value="spanish">Испанский</option>
+            <option value="german">Немецкий</option>
+            <option value="french">Французский</option>
+          </select>
+          <p class="privacy-note">Аудио не отправляется на наш сервер. Whisper работает в этой вкладке. При первом запуске Chrome скачает около 75–110 МБ и сохранит модель в кэше.</p>
+        </div>
+
+        <div class="setup-column lyrics-column">
+          <label class="step-label" for="lyrics-input">02 · ГОТОВЫЙ ТЕКСТ</label>
+          <textarea id="lyrics-input" spellcheck="false" placeholder="Вставьте текст песни — каждая фраза с новой строки"></textarea>
+          <span id="line-count" class="line-count">0 строк</span>
+        </div>
+      </section>
+
+      <div class="primary-row">
+        <button id="analyze-button" class="primary-button" type="button">Распознать и расставить метки</button>
+      </div>
+
+      <section id="progress-section" class="progress-section" hidden aria-live="polite">
+        <div class="progress-copy">
+          <strong id="progress-title">Подготовка…</strong>
+          <span id="progress-detail">Загрузка локальной модели</span>
+        </div>
+        <div class="progress-track"><i id="progress-bar"></i></div>
+      </section>
+
+      <section id="results-section" class="results-section" hidden>
+        <header class="results-header">
+          <div>
+            <span class="step-label">03 · ПРОВЕРКА</span>
+            <h2>Метки готовы</h2>
+          </div>
+          <span id="confidence" class="confidence"></span>
+        </header>
+        <p class="result-hint">Просмотрите начало строк. Время можно поправить вручную перед сохранением.</p>
+        <div id="result-list" class="result-list"></div>
+        <footer class="result-actions">
+          <button id="reanalyze-button" class="secondary-button" type="button">Пересчитать</button>
+          <button id="save-button" class="primary-button" type="button">Сохранить для этого трека</button>
+        </footer>
+      </section>
+
+      <p id="message" class="message" role="status"></p>
+    </main>
+    <script type="module" src="auto-sync.js"></script>
+  </body>
+</html>

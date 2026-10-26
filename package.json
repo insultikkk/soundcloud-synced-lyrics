@@ -1,0 +1,12 @@
+{
+  "name": "soundcloud-genius-extension",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:auto-sync": "node scripts/build-auto-sync.mjs",
+    "test": "node --test search-utils.test.mjs lrc-utils.test.mjs alignment-utils.test.mjs background.test.mjs"
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "3.8.1"
+  }
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Настройки — Lyrics for SoundCloud</title>
+    <link rel="stylesheet" href="settings.css">
+  </head>
+  <body class="options-page">
+    <main class="options-shell">
+      <header>
+        <span class="kicker">LYRICS FOR SOUNDCLOUD</span>
+        <h1>Настройки</h1>
+        <p>Расширение работает локально в Chrome. Ключи сохраняются в профиле браузера и отправляются только соответствующему API.</p>
+      </header>
+
+      <section>
+        <h2>Поведение</h2>
+        <label class="check-row"><input id="autoOpen" type="checkbox"> Автоматически открывать панель при смене трека</label>
+        <p>Построчная синхронизация включается автоматически, когда для песни найдены точные временные метки.</p>
+      </section>
+
+      <section>
+        <h2>Musixmatch API</h2>
+        <p>Необязательно. Используется первым для поиска официальных построчных временных меток. Если совпадения нет, расширение автоматически продолжит поиск в LRCLIB и Genius.</p>
+        <label class="field-label" for="musixmatchKey">API Key</label>
+        <input id="musixmatchKey" class="text-field" type="password" autocomplete="off" placeholder="Вставьте свой Musixmatch API Key">
+        <p class="field-help"><a href="https://developer.musixmatch.com/" target="_blank" rel="noreferrer">Получить ключ на Musixmatch ↗</a></p>
+      </section>
+
+      <section>
+        <h2>Genius API</h2>
+        <p>Необязательно. Если обычный поиск Genius блокируется, вставьте Client Access Token своего приложения Genius.</p>
+        <label class="field-label" for="geniusToken">Client Access Token</label>
+        <input id="geniusToken" class="text-field" type="password" autocomplete="off" placeholder="Оставьте пустым для поиска без токена">
+        <p class="field-help"><a href="https://genius.com/api-clients" target="_blank" rel="noreferrer">Открыть страницу API Clients на Genius ↗</a></p>
+      </section>
+
+      <div class="save-row">
+        <button id="save" class="primary-button" type="button">Сохранить</button>
+        <span id="status" role="status"></span>
+      </div>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

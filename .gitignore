@@ -1,0 +1,8 @@
+node_modules/
+web-ext-artifacts/
+.qa/
+.env
+.env.*
+*.zip
+*.xpi
+assets/logo-source.png
